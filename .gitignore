@@ -1,6 +1,5 @@
 .idea/
 *.iml
-
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
@@ -28,6 +27,5 @@ bin/
 
 ### VS Code ###
 .vscode/
-
 ### Mac OS ###
 .DS_Store
