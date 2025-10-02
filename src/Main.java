@@ -1,48 +1,86 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-
-        for (int i = 1; i <= 10; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println(i);
-
-        }
-        for (int i = 10; i >= 1; i = i - 1) {
-            System.out.println(i);
-        }
-        for (int i = 0; i < 17; i = i + 2) {
-            System.out.println(i);
-        }
-        for (int i = 10; i >= -10; i = i - 1) {
-            System.out.println(i);
-        }
-        for (int i = 1904; i <= 2096; i = i +4) {
-            System.out.println(i + " год является високосным");
-        }
-        for (int i = 7; i <= 98; i = i + 7) {
-            System.out.println(i);
-        }
-        for (int i = 1; i <= 512; i = i * 2) {
-            System.out.println(i);
-        }
         int total = 0;
-        for (int i = 1; i <= 12; i++) {
-            total  = total + 29000;
-            System.out.println("Месяц " + i + " сумма накоплений равна " + total + " рублей");
+        int months = 0;
+        while (total <= 2_459_000) {
+            months = months + 1;
+            total = total + 15_000;
+            System.out.println("Месяц " + months + ", сумма накоплений равна " + total + " рублей");
+
         }
-        int total2 = 0;
-        for (int i = 1; i <= 12; i++) {
-            total2  = total2 + total2/100;
-            total2 = total2 + 29000;
-            System.out.println("Месяц " + i + " сумма накоплений равна " + total2 + " рублей");
+        int i = 0;
+        while (i < 10) {
+            i = i + 1;
+            System.out.print(i + " ");
         }
-        int two  = 2;
-        int multiplication = 0;
-        for (int i = 1; i <= 10; i++) {
-            multiplication  = two * i;
-            System.out.println(i + " * " + two + " = " + multiplication);
+        System.out.println();
+        int a = 11;
+        while (a > 1) {
+            a = a - 1;
+            System.out.print(a + " ");
         }
+        System.out.println();
+        int born = 17;
+        int death = 8;
+        var growing = born - death;
+        int people = 12_000_000;
+        int years = 0;
+        while (years < 10) {
+            years++;
+            people += (people / 1000) * growing;
+            System.out.println("Год " + years + ", численность населения составляет " + people);
+        }
+        System.out.println();
+        int deposit = 15_000;
+        months = 0;
+        int bankPercents = 7;
+        while (deposit < 12_000_000) {
+            months++;
+            deposit += ((deposit / 1000) * bankPercents);
+            System.out.println("Месяц " + months + ", накопления по вкладу " + deposit);
+
+        }
+        System.out.println();
+        int dep = 15_000;
+        int month = 0;
+        int percents = 7;
+        while (dep < 12_000_000) {
+            month++;
+            dep += ((dep / 1000) * percents);
+            if (month % 6 == 0) {
+                System.out.println("Месяц " + month + ", накопления по вкладу " + dep);
+            }
+        }
+        System.out.println();
+        int deposit2 = 15_000;
+        int month2 = 0;
+        int monthsToYears = 12 * 9;
+        int percent = 7;
+        while (month2 < monthsToYears) {
+            month2++;
+            deposit2 += ((deposit2 / 1000) * percent);
+            if (month2 % 6 == 0) {
+                System.out.println(deposit2);
+            }
+        }
+        System.out.println();
+        int number = 5;
+        while (number < 31) {
+            System.out.println("Сегодня пятница, " + number + " число. Необходимо подготовить отчет");
+            number = number + 7;
+        }
+        int now = 2025;
+        int startYear = now - 200;
+        int endYear = now + 100;
+        int firstCometYear = startYear;
+        while (firstCometYear % 79 != 0) {
+            firstCometYear++;
+        }
+        for (int year = firstCometYear; year <= endYear; year += 79) {
+            if (year >= startYear && year <= endYear) {
+                System.out.println(year);
+            }
+        }
+
     }
 }
