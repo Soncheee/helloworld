@@ -1,86 +1,80 @@
 public class Main {
     public static void main(String[] args) {
-        int total = 0;
-        int months = 0;
-        while (total <= 2_459_000) {
-            months = months + 1;
-            total = total + 15_000;
-            System.out.println("Месяц " + months + ", сумма накоплений равна " + total + " рублей");
+        int firstFriday = 1;
+        int days = 0;
+        for (; firstFriday < 31; firstFriday += 7) {
+            days++;
+            System.out.println("Сегодня пятница, " + firstFriday + "-е число. Необходимо подготовить отчет.");
+        }
 
-        }
-        int i = 0;
-        while (i < 10) {
-            i = i + 1;
-            System.out.print(i + " ");
-        }
-        System.out.println();
-        int a = 11;
-        while (a > 1) {
-            a = a - 1;
-            System.out.print(a + " ");
-        }
-        System.out.println();
-        int born = 17;
-        int death = 8;
-        var growing = born - death;
-        int people = 12_000_000;
-        int years = 0;
-        while (years < 10) {
-            years++;
-            people += (people / 1000) * growing;
-            System.out.println("Год " + years + ", численность населения составляет " + people);
-        }
-        System.out.println();
-        int deposit = 15_000;
-        months = 0;
-        int bankPercents = 7;
-        while (deposit < 12_000_000) {
-            months++;
-            deposit += ((deposit / 1000) * bankPercents);
-            System.out.println("Месяц " + months + ", накопления по вкладу " + deposit);
+        int distance = 0;
+        do {
+            System.out.println("Держитесь! Осталось " + (42195 - distance) + " метров");
+            distance += 500;
+        } while (distance <= 42195);
 
+        int distance2 = 0;
+        for (; distance2 <= 42195; distance2 += 500) {
+            System.out.println("Держитесь! Осталось " + (42195 - distance2) + " метров");
         }
+
+        int currentDay = 1;
+        int money = 500;
+        for (; money > 0; ) {
+            if (currentDay % 5 == 0) {
+                currentDay++;
+                continue;
+            }
+            System.out.println("День " + currentDay + " Сумма " + money);
+            money -= 100;
+            currentDay++;
+        }
+
         System.out.println();
-        int dep = 15_000;
+
+        int day = 1;
+        int summ = 500;
+        while (summ > 0) {
+            if (day % 5 == 0) {
+                day++;
+                continue;
+            }
+            System.out.println("День " + day + " Сумма " + summ);
+            summ -= 100;
+            day++;
+        }
+
+        System.out.println();
+
         int month = 0;
-        int percents = 7;
-        while (dep < 12_000_000) {
+        double total = 0;
+        while (true) {
             month++;
-            dep += ((dep / 1000) * percents);
+            total += 15000;
             if (month % 6 == 0) {
-                System.out.println("Месяц " + month + ", накопления по вкладу " + dep);
+                total *= 1.07;
             }
-        }
-        System.out.println();
-        int deposit2 = 15_000;
-        int month2 = 0;
-        int monthsToYears = 12 * 9;
-        int percent = 7;
-        while (month2 < monthsToYears) {
-            month2++;
-            deposit2 += ((deposit2 / 1000) * percent);
-            if (month2 % 6 == 0) {
-                System.out.println(deposit2);
-            }
-        }
-        System.out.println();
-        int number = 5;
-        while (number < 31) {
-            System.out.println("Сегодня пятница, " + number + " число. Необходимо подготовить отчет");
-            number = number + 7;
-        }
-        int now = 2025;
-        int startYear = now - 200;
-        int endYear = now + 100;
-        int firstCometYear = startYear;
-        while (firstCometYear % 79 != 0) {
-            firstCometYear++;
-        }
-        for (int year = firstCometYear; year <= endYear; year += 79) {
-            if (year >= startYear && year <= endYear) {
-                System.out.println(year);
+            System.out.printf("Месяц %d Сумма %.0f %n", month, total);
+            if (total >= 12000000) {
+                break;
             }
         }
 
+        int charge = 20;
+        int minute = 0;
+        int overheats = 0;
+        while (charge < 100) {
+            minute++;
+            charge += 2;
+            if (minute % 10 == 0) {
+                overheats++;
+                System.out.println("Перегрев");
+            }
+            if (overheats > 3) {
+                System.out.println("Досрочное завершение");
+                break;
+            }
+        }
+        System.out.println("Время зарядки составило " + minute + " минут");
     }
 }
